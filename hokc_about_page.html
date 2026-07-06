@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - HOKC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 3rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-container img {
+            height: 60px;
+            width: auto;
+        }
+
+        .logo-text {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(220, 53, 69, 0.2);
+            color: #dc3545;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .page-header p {
+            font-size: 1.3rem;
+            color: #dc3545;
+            font-weight: 500;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-section.gray {
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #1a1a1a;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #dc3545;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .content-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #555;
+            max-width: 900px;
+            margin: 0 auto 2rem;
+        }
+
+        .content-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Vision & Mission Grid */
+        .vm-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .vm-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            border-top: 4px solid #dc3545;
+            transition: transform 0.3s ease;
+        }
+
+        .vm-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .vm-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .vm-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+            text-align: center;
+        }
+
+        .vm-card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            text-align: center;
+        }
+
+        /* Values Grid */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .value-card:hover {
+            transform: translateY(-8px);
+            border-color: #dc3545;
+            box-shadow: 0 15px 40px rgba(220, 53, 69, 0.3);
+        }
+
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #dc3545;
+        }
+
+        .value-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #dc3545;
+        }
+
+        .value-card p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #ccc;
+        }
+
+        /* Leadership Section */
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .leader-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .leader-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .leader-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: white;
+        }
+
+        .leader-info {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .leader-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+
+        .leader-info .title {
+            color: #dc3545;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .leader-info p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #dc3545;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #dc3545;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #1a1a1a;
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            nav {
+                padding: 0 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img src="hokc-logo.png" alt="HOKC Logo">
+                <span class="logo-text">HOKC</span>
+            </div>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="ministries.html">Ministries</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>About HOKC</h1>
+        <p>God's Happy Family - Heirs of the Kingdom Chapel</p>
+    </section>
+
+    <!-- Our Story -->
+    <section class="content-section">
+        <h2 class="section-title">Our Story</h2>
+        <p class="section-subtitle">A Journey of Faith</p>
+        <div class="content-text">
+            <p>Heirs of the Kingdom Chapel (HOKC) is a vibrant Christian community located at Babcock University, Ilishan-Remo, Ogun State. We are dedicated to creating a welcoming environment where everyone can experience God's love and grace.</p>
+            <p>Our church believes in the power of fellowship, the importance of biblical teaching, and the transformative work of the Holy Spirit. We are committed to nurturing spiritual growth, building lasting relationships, and making a positive impact in our community and beyond.</p>
+            <p>At HOKC, we embrace the motto "God's Happy Family" because we believe that the church should be a place of joy, acceptance, and belonging. Whether you're a student, faculty member, or community resident, you'll find a warm welcome here.</p>
+        </div>
+    </section>
+
+    <!-- Vision & Mission -->
+    <section class="content-section gray">
+        <h2 class="section-title">Vision & Mission</h2>
+        <p class="section-subtitle">Our Purpose & Direction</p>
+        <div class="vm-grid">
+            <div class="vm-card">
+                <div class="vm-icon">🎯</div>
+                <h3>Our Vision</h3>
+                <p>To be a thriving community of believers who live out their faith authentically, impact their world positively, and help others discover the transforming love of Jesus Christ.</p>
+            </div>
+            <div class="vm-card">
+                <div class="vm-icon">🚀</div>
+                <h3>Our Mission</h3>
+                <p>To worship God wholeheartedly, grow in biblical knowledge and spiritual maturity, serve our community sacrificially, and share the gospel of Jesus Christ with passion and compassion.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="content-section">
+        <h2 class="section-title">Our Core Values</h2>
+        <p class="section-subtitle">What We Stand For</p>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">📖</div>
+                <h3>Biblical Truth</h3>
+                <p>We believe in the authority and sufficiency of Scripture as God's inspired Word.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">❤️</div>
+                <h3>Genuine Love</h3>
+                <p>We express Christ's love through authentic relationships and compassionate service.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🙏</div>
+                <h3>Passionate Worship</h3>
+                <p>We worship God with all our heart, soul, mind, and strength.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🌱</div>
+                <h3>Spiritual Growth</h3>
+                <p>We are committed to continuous learning and maturity in our faith journey.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🤝</div>
+                <h3>Community</h3>
+                <p>We believe in the power of fellowship and supporting one another.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">✨</div>
+                <h3>Excellence</h3>
+                <p>We honor God by pursuing excellence in all that we do.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Believe -->
+    <section class="content-section gray">
+        <h2 class="section-title">What We Believe</h2>
+        <p class="section-subtitle">Our Statement of Faith</p>
+        <div class="content-text">
+            <p><strong>The Bible:</strong> We believe the Bible is the inspired, infallible Word of God and the ultimate authority for faith and practice.</p>
+            <p><strong>The Trinity:</strong> We believe in one God eternally existing in three persons: Father, Son, and Holy Spirit.</p>
+            <p><strong>Jesus Christ:</strong> We believe in the deity of Jesus Christ, His virgin birth, sinless life, atoning death, bodily resurrection, and triumphant return.</p>
+            <p><strong>Salvation:</strong> We believe salvation is a gift of God's grace, received through faith in Jesus Christ alone.</p>
+            <p><strong>The Church:</strong> We believe the church is the body of Christ, called to worship, fellowship, discipleship, and mission.</p>
+            <p><strong>Eternal Life:</strong> We believe in the resurrection of both the saved and the lost—the saved to eternal life and the lost to eternal separation from God.</p>
+        </div>
+    </section>
+
+    <!-- Leadership -->
+    <section class="content-section">
+        <h2 class="section-title">Our Leadership</h2>
+        <p class="section-subtitle">Serving God's Happy Family</p>
+        <div class="leadership-grid">
+            <div class="leader-card">
+                <div class="leader-image">👨‍💼</div>
+                <div class="leader-info">
+                    <h3>Pastor [Name]</h3>
+                    <p class="title">Senior Pastor</p>
+                    <p>Leading our congregation with wisdom, compassion, and dedication to God's Word.</p>
+                </div>
+            </div>
+            <div class="leader-card">
+                <div class="leader-image">👨‍💼</div>
+                <div class="leader-info">
+                    <h3>Pastor [Name]</h3>
+                    <p class="title">Associate Pastor</p>
+                    <p>Supporting our ministry with passion for teaching and discipleship.</p>
+                </div>
+            </div>
+            <div class="leader-card">
+                <div class="leader-image">👨‍💼</div>
+                <div class="leader-info">
+                    <h3>[Name]</h3>
+                    <p class="title">Youth Ministry Leader</p>
+                    <p>Empowering the next generation to live boldly for Christ.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Location</h3>
+                <p>Babcock University<br>Ilishan-Remo, Ogun State<br>Nigeria</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Phone: +234 806 521 4139</p>
+                <p>Email: hokc.info@oyerinde.org</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="about.html">About Us</a>
+                <a href="ministries.html">Ministries</a>
+                <a href="media.html">Sermons</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Office Hours</h3>
+                <p>Monday - Saturday<br>9:00 AM - 6:00 PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Heirs of the Kingdom Chapel. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; font-style: italic;">In God We Trust</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('nav');
+            const navLinks = document.getElementById('navLinks');
+            
+            if (!nav.contains(event.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

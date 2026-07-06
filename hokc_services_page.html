@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - HOKC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 3rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-container img {
+            height: 60px;
+            width: auto;
+        }
+
+        .logo-text {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(220, 53, 69, 0.2);
+            color: #dc3545;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .page-header p {
+            font-size: 1.3rem;
+            color: #dc3545;
+            font-weight: 500;
+        }
+
+        /* Service Times Section */
+        .service-times {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #555;
+        }
+
+        .times-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .time-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .time-card:hover {
+            transform: translateY(-10px);
+            border-color: #dc3545;
+            box-shadow: 0 15px 40px rgba(220, 53, 69, 0.3);
+        }
+
+        .time-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: #dc3545;
+        }
+
+        .time-card h3 {
+            color: #dc3545;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .time {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: white;
+            letter-spacing: 1px;
+        }
+
+        .location {
+            font-size: 1.15rem;
+            color: #ccc;
+            margin-bottom: 1.5rem;
+        }
+
+        .description {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #bbb;
+            margin-top: 1rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(220, 53, 69, 0.3);
+        }
+
+        /* What to Expect */
+        .expect-section {
+            background: #f8f9fa;
+            padding: 5rem 2rem;
+        }
+
+        .expect-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #1a1a1a;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #dc3545;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .expect-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .expect-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            border-top: 4px solid #dc3545;
+            transition: transform 0.3s ease;
+        }
+
+        .expect-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .expect-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .expect-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .expect-card p {
+            color: #666;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* Special Events */
+        .events-section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            border: 2px solid #f8f9fa;
+        }
+
+        .event-card:hover {
+            transform: translateY(-10px);
+            border-color: #dc3545;
+        }
+
+        .event-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+
+        .event-content {
+            padding: 2rem;
+        }
+
+        .event-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .event-date {
+            color: #dc3545;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .event-content p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #dc3545;
+            padding: 1.2rem 3rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            background: #1a1a1a;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #dc3545;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #dc3545;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #1a1a1a;
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            nav {
+                padding: 0 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img src="hokc-logo.png" alt="HOKC Logo">
+                <span class="logo-text">HOKC</span>
+            </div>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="ministries.html">Ministries</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Service Times</h1>
+        <p>Join Us in Worship</p>
+    </section>
+
+    <!-- Service Times -->
+    <section class="service-times">
+        <p class="section-intro">
+            At HOKC, we gather together to worship God, grow in our faith, and build meaningful relationships. All are welcome to join us at any of our services. Come as you are and experience God's presence with us!
+        </p>
+
+        <div class="times-grid">
+            <div class="time-card">
+                <div class="time-icon">🌅</div>
+                <h3>Sabbath Worship</h3>
+                <div class="time">8:45 AM</div>
+                <p class="location">📍 Buth 600 Seater Auditorium</p>
+                <p class="description">Start your Saturday morning with powerful worship, inspiring messages from God's Word, and fellowship with believers. This is our main weekly gathering where the whole church family comes together.</p>
+            </div>
+
+            <div class="time-card">
+                <div class="time-icon">📖</div>
+                <h3>Bible Study</h3>
+                <div class="time">8:30 PM</div>
+                <p class="location">📍 Buth 600 Seater Auditorium</p>
+                <p class="description">Dive deeper into Scripture in our evening Bible study. Through careful examination of God's Word, we grow in knowledge and understanding together as we apply biblical truths to our daily lives.</p>
+            </div>
+
+            <div class="time-card">
+                <div class="time-icon">🌆</div>
+                <h3>Evening Service</h3>
+                <div class="time">6:00 PM</div>
+                <p class="location">📍 Buth 600 Seater Auditorium</p>
+                <p class="description">End your day with worship and prayer. Our evening service provides a peaceful atmosphere to reflect, worship, and receive encouragement for the week ahead.</p>
+            </div>
+
+            <div class="time-card">
+                <div class="time-icon">🕊️</div>
+                <h3>Wednesday Worship</h3>
+                <div class="time">6:15 PM</div>
+                <p class="location">📍 Accredited Hall</p>
+                <p class="description">Midweek spiritual refreshment through worship, prayer, and biblical teaching. It's a wonderful opportunity to stay connected and spiritually recharged throughout the week.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What to Expect -->
+    <section class="expect-section">
+        <div class="expect-container">
+            <h2 class="section-title">What to Expect</h2>
+            <p class="section-subtitle">Your First Visit</p>
+            <div class="expect-grid">
+                <div class="expect-card">
+                    <div class="expect-icon">🤝</div>
+                    <h3>Warm Welcome</h3>
+                    <p>Our greeters and members will welcome you with genuine smiles and help you feel at home from the moment you arrive.</p>
+                </div>
+                <div class="expect-card">
+                    <div class="expect-icon">🎵</div>
+                    <h3>Uplifting Worship</h3>
+                    <p>Experience contemporary and traditional worship music that glorifies God and prepares our hearts to receive His Word.</p>
+                </div>
+                <div class="expect-card">
+                    <div class="expect-icon">💬</div>
+                    <h3>Practical Teaching</h3>
+                    <p>Hear biblical messages that are relevant, engaging, and applicable to your everyday life and spiritual journey.</p>
+                </div>
+                <div class="expect-card">
+                    <div class="expect-icon">👨‍👩‍👧‍👦</div>
+                    <h3>Family Friendly</h3>
+                    <p>We provide programs for all ages, including children's ministry, so the whole family can worship together.</p>
+                </div>
+                <div class="expect-card">
+                    <div class="expect-icon">☕</div>
+                    <h3>Fellowship Time</h3>
+                    <p>After services, join us for refreshments and conversation. It's a great time to meet people and make connections.</p>
+                </div>
+                <div class="expect-card">
+                    <div class="expect-icon">👔</div>
+                    <h3>Come As You Are</h3>
+                    <p>Dress comfortably! Whether casual or formal, what matters most is your heart's attitude toward worship.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Events -->
+    <section class="events-section">
+        <h2 class="section-title">Special Events</h2>
+        <p class="section-subtitle">Mark Your Calendars</p>
+        <div class="events-grid">
+            <div class="event-card">
+                <div class="event-image">🎉</div>
+                <div class="event-content">
+                    <h3>Church Anniversary</h3>
+                    <p class="event-date">Annual Celebration</p>
+                    <p>Join us as we celebrate another year of God's faithfulness with special services, testimonies, and fellowship.</p>
+                </div>
+            </div>
+            <div class="event-card">
+                <div class="event-image">🎄</div>
+                <div class="event-content">
+                    <h3>Christmas Service</h3>
+                    <p class="event-date">December</p>
+                    <p>Celebrate the birth of our Savior with special worship, drama presentations, and a message of hope and joy.</p>
+                </div>
+            </div>
+            <div class="event-card">
+                <div class="event-image">✝️</div>
+                <div class="event-content">
+                    <h3>Easter Celebration</h3>
+                    <p class="event-date">Spring</p>
+                    <p>Commemorate Christ's resurrection with powerful services that remind us of God's love and victory over death.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Plan Your Visit</h2>
+        <p>We'd love to meet you! If you have any questions about our services or need directions, don't hesitate to reach out.</p>
+        <a href="contact.html" class="cta-button">Contact Us</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Location</h3>
+                <p>Babcock University<br>Ilishan-Remo, Ogun State<br>Nigeria</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Phone: +234 806 521 4139</p>
+                <p>Email: hokc.info@oyerinde.org</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="about.html">About Us</a>
+                <a href="ministries.html">Ministries</a>
+                <a href="media.html">Sermons</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Office Hours</h3>
+                <p>Monday - Saturday<br>9:00 AM - 6:00 PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Heirs of the Kingdom Chapel. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; font-style: italic;">In God We Trust</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('nav');
+            const navLinks = document.getElementById('navLinks');
+            
+            if (!nav.contains(event.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

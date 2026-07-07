@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heirs of the Kingdom Chapel - HOKC</title>
+    <link rel="stylesheet" href="/hokc_styles_contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link rel="stylesheet" href="https://cdn.tailwindcss.com">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Playwrite+AU+VIC+Guides&family=Sedgwick+Ave&family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img src="/hokc-logo.png.jpg.jpg" alt="HOKC Logo">
+                <span class="logo-text">HOKC</span>
+            </div>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/hokc_main_page.html">Home</a></li>
+                <li><a href="/hokc_about_page.html">About</a></li>
+                <li><a href="/hokc_services_page.html">Services</a></li>
+                <li><a href="/hokc_ministries_page.html">Ministries</a></li>
+                <li><a href="/hokc_media_page.html">Media</a></li>
+                <li><a href="/hokc_contact_page.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br>
+    <br>
+    <br>
+    <br> <br> 
+    <body>
+
+   <section class="container">
+    <h1 style="font-size: larger;">Contact Us</h1>
+    <p>If you have any questions, inquiries, or feedback, please feel free to reach
+    <br>
+    <br>
+    <br>
+<div class="contact-container">
+    <div class="contact-options">
+    <div class="contact-card">
+        <h3>Email</h3>
+        <p>oluwademiladeoyedele7@gmail.com</p>
+        <a href="mailto:oluwademiladeoyedele7@gmail.com" class="contact-button">Send a mail</a>
+    </div>
+    <div class="contact-card">
+        <h3>WhatsApp</h3>
+        <p>08143180743</p>
+        <a href="https://wa.me/2348143180743" class="contact-button">Send a message</a>
+    </div>
+    </div>
+
+    <form class="contact-form">
+    <input type="text" placeholder="Your Full Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Leave a message" required></textarea>
+    <a href="https://wa.me/2348143180743"><button type="submit">Send Message</button></a>
+    </form>
+</div>
+
+</section>
+
+</div>
+<div class="social-media">
+    <h3>Follow Us</h3>
+    <br>
+    <br>
+    <div class="social">
+        <a href="https://www.tiktok.com/hokc" target="_blank" class="tik"><i class="fa-brands fa-tiktok" style="color: linear-gradient(#25F4EE, #FE2C55, #000000, #FFFFFF);"></i>Tiktok</a> |
+        <a href="https://www.youtube.com/hokc" target="_blank" class="you"><i class="fa-brands fa-youtube" style="color: #fc0707;"></i>Youtube</a> |
+        <a href="https://www.instagram.com/hokc" target="_blank" class="insta"><i class="fa-brands fa-instagram" style="color: #e1306c;"></i>Instagram</a>
+    </div>
+</div>
+
+
+
+
+
+     <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Location</h3>
+                <p>Babcock University<br>Ilishan-Remo, Ogun State<br>Nigeria</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Phone: +234 806 521 4139</p>
+                <p>Email: hokc.info@oyerinde.org</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="about.html">About Us</a>
+                <a href="ministries.html">Ministries</a>
+                <a href="media.html">Sermons</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Office Hours</h3>
+                <p>Monday - Saturday<br>9:00 AM - 6:00 PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Heirs of the Kingdom Chapel. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; font-style: italic;">In God We Trust</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('nav');
+            const navLinks = document.getElementById('navLinks');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            if (!nav.contains(event.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

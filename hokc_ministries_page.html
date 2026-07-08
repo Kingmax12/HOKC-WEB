@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heirs of the Kingdom Chapel - HOKC</title>
+    <link rel="stylesheet" href="/hokc_styles_ministries.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Playwrite+AU+VIC+Guides&family=Sedgwick+Ave&family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img src="/hokc-logo.png.jpg.jpg" alt="HOKC Logo">
+                <span class="logo-text">HOKC</span>
+            </div>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/hokc_main_page.html">Home</a></li>
+                <li><a href="/hokc_about_page.html">About</a></li>
+                <li><a href="/hokc_services_page.html">Services</a></li>
+                <li><a href="/hokc_ministries_page.html">Ministries</a></li>
+                <li><a href="/hokc_media_page.html">Media</a></li>
+                <li><a href="/hokc_contact_page.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+   <!--hero section-->
+ <section class="hero">
+        <div class="hero-content">
+            <img src="/hokc-logo.png.jpg.jpg" alt="HOKC Logo" class="hero-logo">
+            <h1>Our Ministries</h1>
+            <p class="hero-tagline">Serving God, Serving people.</p>
+        </div>
+    </section>  
+    
+    <section>
+<div class="ministries-container">
+    <div class="ministry-card">
+        <h3>Children's Ministry</h3>
+        <p>Engaging and nurturing the spiritual growth of our youngest members through fun and educational activities.</p>
+    </div>
+    <div class="ministry-card">
+        <h3>Youth Ministry</h3>
+        <p>Empowering the youth to grow in their faith, develop leadership skills, and make a positive impact in their communities.</p>
+    </div>
+    <div class="ministry-card">
+        <h3>Women's Ministry</h3>
+        <p>Providing support, fellowship, and spiritual growth opportunities for women in our congregation
+    </p>
+    </div>  
+    <div class="ministry-card">
+        <h3>Men's Ministry</h3>
+        <p>Encouraging men to grow in their faith, build strong relationships, and serve their families and communities.</p>
+    </div>          
+                                                    
+    
+
+
+
+
+    </section>
+   
+   
+   <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Location</h3>
+                <p>Babcock University<br>Ilishan-Remo, Ogun State<br>Nigeria</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Phone: +234 806 521 4139</p>
+                <p>Email: hokc.info@oyerinde.org</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="about.html">About Us</a>
+                <a href="ministries.html">Ministries</a>
+                <a href="media.html">Sermons</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Office Hours</h3>
+                <p>Monday - Saturday<br>9:00 AM - 6:00 PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Heirs of the Kingdom Chapel. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; font-style: italic;">In God We Trust</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('nav');
+            const navLinks = document.getElementById('navLinks');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            if (!nav.contains(event.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

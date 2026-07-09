@@ -87,8 +87,11 @@ body {
 
         /*Contact container */
         .container{
-             margin: 0 0 15px 40px;
-            max-width: 1200px;
+             margin-left:auto;
+             margin-right:auto;
+             margin-top:10px;
+             margin-bottom:40px;
+            max-width: 1000px;
              background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
                         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231a1a1a" width="1200" height="600"/><circle cx="600" cy="300" r="200" fill="%23dc3545" opacity="0.1"/><circle cx="300" cy="150" r="100" fill="%23ffffff" opacity="0.05"/><circle cx="900" cy="450" r="150" fill="%23dc3545" opacity="0.08"/></svg>');
             background-size: cover;
@@ -97,6 +100,10 @@ body {
             height: 100vh;
             color:#fff;
             padding:15px;
+            display:flex;
+            flex-direction :column;
+            justify-content:center;
+            align-items: center;
         }
 
         .con{
@@ -111,11 +118,11 @@ body {
   .contact-container{
      background: #4d0b12;
 margin-bottom:80px;
-margin-top:5px;
-margin-left:300px;
-margin-right:300px;
-padding:20px;
-padding-bottom:100px;
+margin-top:40px;
+margin-left:auto;
+margin-right:auto;
+padding:5px;
+padding-bottom:50px;
 border: 6px solid #1d1c1c;
 border-radius: 10px;
 box-shadow:inset 0 0 10px #000000;
@@ -160,6 +167,7 @@ height: 100%;
 border-radius:5px;
 background-color:black;
 color:#fff;
+padding:5px;
   }
 
   .con-input{
@@ -173,7 +181,9 @@ color:black;
     flex-direction:column;
 justify-content:center;
 align-items:center;
- padding:50px;
+margin-left:auto;
+margin-right:auto;
+ padding:7px;
 border-radius: 10px;
 border: 4px solid #4d0b12 ;
 height: 100%;

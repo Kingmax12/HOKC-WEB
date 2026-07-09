@@ -1,0 +1,102 @@
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#ffffff",
+                    "primary": "#162839",
+                    "tertiary-fixed-dim": "#ffb961",
+                    "on-surface-variant": "#43474c",
+                    "on-secondary-fixed-variant": "#713700",
+                    "surface-bright": "#f8f9fa",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#b5c8df",
+                    "tertiary-fixed": "#ffddb9",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-container": "#e99401",
+                    "on-secondary-container": "#663100",
+                    "primary-fixed-dim": "#b5c8df",
+                    "outline": "#74777d",
+                    "outline-variant": "#c4c6cd",
+                    "surface-container-high": "#e7e8e9",
+                    "inverse-on-surface": "#f0f1f2",
+                    "primary-container": "#2c3e50",
+                    "on-background": "#191c1d",
+                    "on-tertiary-fixed": "#2b1700",
+                    "on-surface": "#191c1d",
+                    "surface-container-low": "#f3f4f5",
+                    "secondary": "#944a00",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#fc8f34",
+                    "surface-variant": "#e1e3e4",
+                    "on-primary-fixed-variant": "#36485b",
+                    "on-tertiary-fixed-variant": "#663e00",
+                    "surface-dim": "#d9dadb",
+                    "secondary-fixed-dim": "#ffb783",
+                    "on-secondary-fixed": "#301400",
+                    "error": "#ba1a1a",
+                    "inverse-surface": "#2e3132",
+                    "on-error-container": "#93000a",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#96a9be",
+                    "background": "#f8f9fa",
+                    "surface-tint": "#4e6073",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#d1e4fb",
+                    "surface-container": "#edeeef",
+                    "surface": "#f8f9fa",
+                    "tertiary-container": "#583500",
+                    "surface-container-highest": "#e1e3e4",
+                    "on-primary-fixed": "#091d2e",
+                    "tertiary": "#3a2100",
+                    "secondary-fixed": "#ffdcc5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "gutter": "20px",
+                    "container-max": "1200px",
+                    "xl": "80px",
+                    "sm": "12px",
+                    "md": "24px",
+                    "base": "8px",
+                    "lg": "48px"
+            },
+            "fontFamily": {
+                    "body-md": ["Montserrat"],
+                    "body-lg": ["Montserrat"],
+                    "display": ["Montserrat"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "label-md": ["Montserrat"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+</style>
